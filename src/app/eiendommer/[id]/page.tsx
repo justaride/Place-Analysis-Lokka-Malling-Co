@@ -227,7 +227,7 @@ export default async function EiendomPage({ params }: PageProps) {
       </Container>
 
       {/* Aktør Liste */}
-      {aktorData && (
+      {aktorData?.actors && aktorData?.categoryStats && aktorData?.metadata && (
         <AktorListe
           actors={aktorData.actors}
           categoryStats={aktorData.categoryStats}
