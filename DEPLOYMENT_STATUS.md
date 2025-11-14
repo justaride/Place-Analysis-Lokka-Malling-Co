@@ -53,28 +53,19 @@
 
 ## Next Steps for Deployment
 
-### 1. Environment Setup
-```bash
-# Copy environment template
-cp .env.example .env.local
-
-# Edit and set password
-SITE_PASSWORD=your-secure-password-here
-```
-
-### 2. Install Dependencies
+### 1. Install Dependencies
 ```bash
 cd /Users/gabrielboen/Place-Analysis-Lokka-Malling-Co
 npm install
 ```
 
-### 3. Run Development Server
+### 2. Run Development Server
 ```bash
 npm run dev
 ```
 Visit http://localhost:3000 to preview
 
-### 4. Deploy to Production
+### 3. Deploy to Production
 
 **Option A: Vercel (Recommended)**
 ```bash

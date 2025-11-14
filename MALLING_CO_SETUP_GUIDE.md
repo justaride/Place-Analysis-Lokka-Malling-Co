@@ -21,7 +21,6 @@ The following references have been changed from "Aspelin Ramm" to "Malling&Co" a
 - **src/app/layout.tsx** - Updated metadata and SEO
 - **src/app/page.tsx** - Changed hero section text
 - **src/app/om-prosjektet/page.tsx** - Updated project information
-- **src/app/login/page.tsx** - Changed login page branding
 - **src/app/sammenlign/page.tsx** - Updated comparison page metadata
 - **src/components/layout/Header.tsx** - Changed logo reference and URL
 
@@ -85,14 +84,7 @@ For each Malling&Co property on Grünerløkka, create:
 
 **See:** `docs/LEGG-TIL-EIENDOM.md` for detailed instructions on adding properties.
 
-### 🔑 3. Environment Configuration
-1. Copy `.env.example` to `.env.local`
-2. Set password for the site:
-   ```
-   SITE_PASSWORD=your-secure-password-here
-   ```
-
-### 📦 4. Installation & Development
+### 📦 3. Installation & Development
 ```bash
 cd /Users/gabrielboen/Place-Analysis-Lokka-Malling-Co
 
@@ -105,13 +97,13 @@ npm run dev
 
 The site will be available at http://localhost:3000
 
-### 🌐 5. Company Information Update
+### 🌐 4. Company Information Update
 Update the company URL in Header component:
 - Currently links to `https://mallingco.com`
 - Verify this is the correct Malling&Co website URL
 - Update if needed in: `src/components/layout/Header.tsx`
 
-### 📝 6. Content Updates Needed
+### 📝 5. Content Updates Needed
 The following files contain SPABO-specific content that should be reviewed and updated:
 
 **High Priority:**
