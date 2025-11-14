@@ -93,9 +93,9 @@ export default function AktorListe({ actors, categoryStats, metadata }: AktorLis
   };
 
   // Top 3 categories by count
-  const topCategories = Object.entries(categoryStats)
+  const topCategories = categoryStats ? Object.entries(categoryStats)
     .sort((a, b) => b[1].count - a[1].count)
-    .slice(0, 3);
+    .slice(0, 3) : [];
 
   // Calculate total revenue
   const totalRevenue = actors.reduce((sum, a) => sum + (a.omsetning || 0), 0);
@@ -200,7 +200,7 @@ export default function AktorListe({ actors, categoryStats, metadata }: AktorLis
                 className="rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm text-lokka-primary transition-colors hover:border-lokka-primary focus:border-lokka-primary focus:outline-none focus:ring-2 focus:ring-lokka-primary/20"
               >
                 <option value="all">Alle ({metadata.totalActors})</option>
-                {Object.entries(categoryStats)
+                {categoryStats && Object.entries(categoryStats)
                   .sort((a, b) => b[1].count - a[1].count)
                   .map(([category, stats]) => (
                     <option key={category} value={category}>
@@ -440,7 +440,7 @@ export default function AktorListe({ actors, categoryStats, metadata }: AktorLis
         <div className="mt-12">
           <h3 className="mb-6 text-xl font-bold text-lokka-primary">Fordeling per kategori</h3>
           <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
-            {Object.entries(categoryStats)
+            {categoryStats && Object.entries(categoryStats)
               .sort((a, b) => b[1].count - a[1].count)
               .map(([category, stats]) => {
                 const percentage = (stats.count / metadata.totalActors) * 100;
