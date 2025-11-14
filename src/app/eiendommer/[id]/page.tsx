@@ -64,10 +64,12 @@ export default async function EiendomPage({ params }: PageProps) {
     }
 
     // Find top category by count
-    if (aktorData?.categoryStats) {
-      const topCategoryEntry = Object.entries(aktorData.categoryStats)
-        .sort((a: any, b: any) => b[1].count - a[1].count)[0];
-      topCategory = topCategoryEntry ? topCategoryEntry[0] : '';
+    if (aktorData?.categoryStats && typeof aktorData.categoryStats === 'object') {
+      const entries = Object.entries(aktorData.categoryStats);
+      if (entries.length > 0) {
+        const topCategoryEntry = entries.sort((a: any, b: any) => b[1].count - a[1].count)[0];
+        topCategory = topCategoryEntry ? topCategoryEntry[0] : '';
+      }
     }
   } catch (error) {
     // Aktør data is optional - no error if file doesn't exist
